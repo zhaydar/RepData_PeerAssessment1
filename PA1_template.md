@@ -42,7 +42,7 @@ stepsPerDay <- aggregate(steps ~ date, activity, sum)
 ggplot(stepsPerDay, aes(x=date, y=steps)) + geom_bar(stat="identity", colour="white") + theme(axis.text.x = element_text(angle = 90))
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="/figure/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 (3) Next, let's look at the mean and median values of the total number of steps taken per day. We'll look at the comprehensive output from R **summary** function
 
@@ -73,7 +73,7 @@ stepsPer5min <- aggregate(steps ~ interval, activity, mean)
 plot(stepsPer5min$interval, stepsPer5min$steps, type="l")
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="figure/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
 
 (2) Specifically, let's single out Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps. R **filter** function will give us the interval number plus the value of the maximum steps per interval
 
@@ -126,7 +126,7 @@ stepsPerDay2 <- aggregate(steps ~ date, activity2, sum)
 ggplot(stepsPerDay2, aes(x=date, y=steps)) + geom_bar(stat="identity", colour="white") + theme(axis.text.x = element_text(angle = 90))
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
+<img src="figure/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 ```r
 summary(stepsPerDay2)
@@ -167,4 +167,4 @@ stepsPer5min2 <- aggregate(steps ~ interval+day, activity2, mean)
 xyplot(steps ~ interval | day, data = stepsPer5min2, type='l', layout = c(1, 2))
 ```
 
-<img src="PA1_template_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+<img src="figure/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
